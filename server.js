@@ -9,6 +9,10 @@ app.use(express.json()); // Parse JSON requests
 const uri = "mongodb+srv://admin:nyIVAc4huqbbqZFs@githubwebsite.yksot.mongodb.net/?retryWrites=true&w=majority&appName=GithubWebsite";
 const client = new MongoClient(uri);
 
+app.use(cors()); // Allow all origins
+
+app.use(express.json());
+
 app.get('/api/data', async (req, res) => {
   try {
     await client.connect();

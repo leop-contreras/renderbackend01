@@ -6,7 +6,7 @@ const app = express();
 app.use(cors()); // Allow requests from your GitHub Pages domain
 app.use(express.json()); // Parse JSON requests
 
-const uri = "mongodb+srv://<username>:<password>@cluster.mongodb.net/yourdatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:nyIVAc4huqbbqZFs@githubwebsite.yksot.mongodb.net/?retryWrites=true&w=majority&appName=GithubWebsite";
 const client = new MongoClient(uri);
 
 app.get('/api/data', async (req, res) => {

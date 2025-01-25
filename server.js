@@ -12,7 +12,7 @@ const client = new MongoClient(uri);
 app.get('/api/data', async (req, res) => {
   try {
     await client.connect();
-    const collection = client.db('yourdatabase').collection('yourcollection');
+    const collection = client.db('sample_mflix').collection('movies');
     const data = await collection.find().toArray();
     res.json(data); // Send data to the frontend
   } catch (error) {
@@ -24,7 +24,7 @@ app.get('/api/data', async (req, res) => {
 app.post('/api/data', async (req, res) => {
   try {
     await client.connect();
-    const collection = client.db('yourdatabase').collection('yourcollection');
+    const collection = client.db('sample_mflix').collection('movies');
     await collection.insertOne(req.body); // Insert data from frontend
     res.status(201).send('Data inserted successfully');
   } catch (error) {
